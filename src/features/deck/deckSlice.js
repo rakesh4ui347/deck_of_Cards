@@ -1,10 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { shuffle } from 'lodash';
 
-const initialState = {
-  deck: [],
-  drawnCards: [],
-};
 
 const suits = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];
 const values = [
@@ -50,25 +46,25 @@ const deckSlice = createSlice({
     },
     sortDrawnCards: (state) => {
       const sortOrder = {
-        Clubs: 0,
-        Spades: 1,
-        Hearts: 2,
-        Diamonds: 3,
+        'Clubs': 0,
+        'Spades': 1,
+        'Hearts': 2,
+        'Diamonds': 3,
       };
       const valueOrder = {
-        2: 2,
-        3: 3,
-        4: 4,
-        5: 5,
-        6: 6,
-        7: 7,
-        8: 8,
-        9: 9,
-        10: 10,
-        Jack: 11,
-        Queen: 12,
-        King: 13,
-        Ace: 14,
+        '2': 2,
+        '3': 3,
+        '4': 4,
+        '5': 5,
+        '6': 6,
+        '7': 7,
+        '8': 8,
+        '9': 9,
+        '10': 10,
+        'Jack': 11,
+        'Queen': 12,
+        'King': 13,
+        'Ace': 14,
       };
       state.drawnCards.sort((a, b) => {
         if (sortOrder[a.suit] === sortOrder[b.suit]) {
